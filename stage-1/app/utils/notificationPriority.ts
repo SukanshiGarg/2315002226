@@ -1,7 +1,3 @@
-/**
- * Notification Priority Calculation Utility
- */
-
 interface Notification {
   ID: string;
   Type: 'Placement' | 'Result' | 'Event';
@@ -26,9 +22,6 @@ const WEIGHT_SCORES: Record<string, number> = {
   Event: 1,
 };
 
-/**
- * Calculate priority score for a single notification.
- */
 export function calculatePriorityScore(
   notification: Notification,
   maxTimestampMs: number
@@ -40,9 +33,7 @@ export function calculatePriorityScore(
   return weightScore * 33.33 + recencyScore * 0.3;
 }
 
-/**
- * Sort and return the top N notifications by priority score.
- */
+
 export function getTopPriorityNotifications(
   notifications: Notification[],
   n: number = 10
@@ -64,9 +55,6 @@ export function getTopPriorityNotifications(
   return scored.slice(0, n);
 }
 
-/**
- * Merge new notifications with existing top set, deduplicate, and re-rank.
- */
 export function maintainTopNotifications(
   currentTopNotifications: Notification[] | null | undefined,
   newNotifications: Notification[],
@@ -84,9 +72,7 @@ export function maintainTopNotifications(
   return getTopPriorityNotifications(unique, n);
 }
 
-/**
- * Format a notification for the frontend display model.
- */
+
 export function formatNotification(
   notification: Notification
 ): FormattedNotification {

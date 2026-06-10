@@ -1,12 +1,3 @@
-/**
- * Frontend Logging Utility
- *
- * Architecture: Frontend Components → Log() → /api/log → External Service
- * - Non-blocking: fires and forgets
- * - Fail-safe: never breaks the UI
- * - Validates stack, level, and package values
- * - Never calls the external logging service directly
- */
 
 type LogStack = 'frontend';
 

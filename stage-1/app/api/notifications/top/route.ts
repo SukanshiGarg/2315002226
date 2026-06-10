@@ -1,9 +1,3 @@
-/**
- * API Route: GET /api/notifications/top
- *
- * Fetches notifications from the external service,
- * calculates priority scores, and returns the top N.
- */
 
 import { NextRequest, NextResponse } from 'next/server';
 import {
