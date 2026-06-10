@@ -1,299 +1,301 @@
-/* Page Module Styles - Component Specific */
+/* ── Page Layout ───────────────────────────────────── */
 
 .container {
-  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
   margin: 0 auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  padding: 48px 24px 80px;
 }
 
+/* ── Header ───────────────────────────────────────── */
+
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 40px 30px;
   text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.5s ease-out;
 }
+
+.headerIcon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ── Controls Bar ─────────────────────────────────── */
 
 .controls {
   display: flex;
-  gap: 20px;
-  padding: 25px 30px;
-  background: #f8f9fa;
-  border-bottom: 2px solid #e9ecef;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.55s ease-out;
 }
 
-.controlGroup {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.controls label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .select {
-  padding: 10px 15px;
-  border: 2px solid #e9ecef;
-  border-radius: 6px;
-  font-size: 1em;
+  appearance: none;
+  padding: 10px 36px 10px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(8px);
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  background: white;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
 }
 
 .select:hover {
-  border-color: #667eea;
+  border-color: rgba(129, 140, 248, 0.5);
 }
 
 .select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
 }
 
-.refreshBtn {
+.total {
   margin-left: auto;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 1em;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+  background: rgba(30, 41, 59, 0.5);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-.refreshBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-}
+/* ── States ───────────────────────────────────────── */
 
-.refreshBtn:active {
-  transform: translateY(0);
-}
-
-.stats {
-  display: flex;
-  gap: 30px;
-  padding: 20px 30px;
-  background: #f0f7ff;
-  border-bottom: 1px solid #e9ecef;
-  font-weight: 600;
-  color: #2c3e50;
+.loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 500;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .error {
-  margin: 20px;
-  padding: 15px 20px;
-  background: #ffe5e5;
-  color: #c0392b;
-  border-left: 4px solid #e74c3c;
-  border-radius: 6px;
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-left: 3px solid #ef4444;
+  border-radius: 12px;
+  color: #fca5a5;
   font-weight: 500;
-}
-
-.loading {
-  padding: 60px 30px;
-  text-align: center;
-  color: #7f8c8d;
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .empty {
-  padding: 60px 30px;
   text-align: center;
-  color: #95a5a6;
-  font-size: 1.2em;
+  padding: 80px 20px;
+  color: #475569;
+  font-size: 1rem;
   font-weight: 500;
 }
 
+/* ── Notification List ────────────────────────────── */
+
 .notificationsList {
-  padding: 30px;
   display: grid;
-  gap: 20px;
+  gap: 16px;
 }
+
+/* ── Notification Card ────────────────────────────── */
 
 .notificationCard {
-  border-left: 5px solid #3498db;
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
   position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+  animation: fadeInUp 0.4s ease-out both;
 }
+
+.notificationCard:nth-child(1) { animation-delay: 0.05s; }
+.notificationCard:nth-child(2) { animation-delay: 0.1s; }
+.notificationCard:nth-child(3) { animation-delay: 0.15s; }
+.notificationCard:nth-child(4) { animation-delay: 0.2s; }
+.notificationCard:nth-child(5) { animation-delay: 0.25s; }
+.notificationCard:nth-child(n+6) { animation-delay: 0.3s; }
 
 .notificationCard:hover {
-  transform: translateX(5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  background: white;
+  transform: translateY(-2px);
+  border-color: rgba(129, 140, 248, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(129, 140, 248, 0.1);
 }
 
-.rankBadge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 20px;
+/* ── Card Header ──────────────────────────────────── */
+
+.notificationHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 0.8rem;
   font-weight: 700;
-  font-size: 0.9em;
+  flex-shrink: 0;
+  background: rgba(129, 140, 248, 0.12);
+  color: #a5b4fc;
+  border: 1px solid rgba(129, 140, 248, 0.15);
 }
 
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  margin-right: 80px;
-  flex-wrap: wrap;
-  gap: 15px;
+/* Gold / Silver / Bronze for top 3 */
+.rankGold {
+  composes: rank;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.1));
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.25);
 }
 
-.typeContainer {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.rankSilver {
+  composes: rank;
+  background: rgba(148, 163, 184, 0.12);
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.rankBronze {
+  composes: rank;
+  background: rgba(217, 119, 6, 0.1);
+  color: #f59e0b;
+  border-color: rgba(217, 119, 6, 0.2);
 }
 
 .icon {
-  font-size: 1.5em;
+  font-size: 1.25rem;
 }
 
-.type {
-  color: white;
-  padding: 5px 12px;
-  border-radius: 6px;
+.typeBadge {
+  font-size: 0.7rem;
   font-weight: 700;
-  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: white;
+}
+
+.typePlacement {
+  composes: typeBadge;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.typeResult {
+  composes: typeBadge;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.typeEvent {
+  composes: typeBadge;
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.typeDefault {
+  composes: typeBadge;
+  background: rgba(100, 116, 139, 0.5);
 }
 
 .priority {
-  color: #667eea;
-  font-weight: 700;
-  font-size: 0.95em;
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #818cf8;
+  background: rgba(129, 140, 248, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ── Card Body ────────────────────────────────────── */
+
+.notificationBody {
+  padding-left: 44px;
 }
 
 .message {
-  margin-bottom: 12px;
-  padding: 12px;
-  background: white;
-  border-radius: 6px;
-  color: #2c3e50;
+  color: #cbd5e1;
+  font-size: 0.925rem;
   line-height: 1.6;
+  margin-bottom: 8px;
 }
 
 .timestamp {
-  margin-bottom: 12px;
-  color: #7f8c8d;
-  font-size: 0.95em;
+  display: block;
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 500;
 }
 
-.id {
-  color: #95a5a6;
-  font-size: 0.85em;
-  word-break: break-all;
-}
+/* ── Responsive ───────────────────────────────────── */
 
-.footer {
-  background: #f8f9fa;
-  border-top: 2px solid #e9ecef;
-  padding: 25px 30px;
-  text-align: center;
-  color: #7f8c8d;
-  font-size: 0.95em;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .container {
-    border-radius: 0;
+    padding: 24px 16px 60px;
   }
 
-  .header {
-    padding: 30px 20px;
+  .header h1 {
+    font-size: 1.5rem;
   }
 
   .controls {
-    padding: 20px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-wrap: wrap;
   }
 
-  .controlGroup {
-    flex: 1;
-  }
-
-  .select {
-    width: 100%;
-  }
-
-  .refreshBtn {
+  .total {
     margin-left: 0;
     width: 100%;
+    text-align: center;
   }
 
-  .stats {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 20px;
+  .notificationBody {
+    padding-left: 0;
   }
 
-  .notificationsList {
-    padding: 20px;
-    gap: 15px;
-  }
-
-  .notificationCard {
-    padding: 15px;
-  }
-
-  .rankBadge {
-    top: 10px;
-    right: 10px;
-    font-size: 0.8em;
-  }
-
-  .cardHeader {
-    margin-right: 60px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .message,
-  .timestamp,
-  .id {
-    padding: 10px;
-  }
-
-  .footer {
-    padding: 20px;
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 20px 15px;
-  }
-
-  .controls {
-    padding: 15px;
-  }
-
-  .notificationCard {
-    border-left-width: 3px;
-  }
-
-  .rankBadge {
-    font-size: 0.75em;
-    padding: 4px 10px;
-  }
-
-  .cardHeader {
-    margin-right: 50px;
+  .priority {
+    display: none;
   }
 }
