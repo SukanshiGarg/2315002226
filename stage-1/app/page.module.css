@@ -1,0 +1,299 @@
+/* Page Module Styles - Component Specific */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  padding: 25px 30px;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controlGroup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.select {
+  padding: 10px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.select:hover {
+  border-color: #667eea;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.refreshBtn {
+  margin-left: auto;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1em;
+}
+
+.refreshBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.refreshBtn:active {
+  transform: translateY(0);
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  padding: 20px 30px;
+  background: #f0f7ff;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.error {
+  margin: 20px;
+  padding: 15px 20px;
+  background: #ffe5e5;
+  color: #c0392b;
+  border-left: 4px solid #e74c3c;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.loading {
+  padding: 60px 30px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.empty {
+  padding: 60px 30px;
+  text-align: center;
+  color: #95a5a6;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.notificationsList {
+  padding: 30px;
+  display: grid;
+  gap: 20px;
+}
+
+.notificationCard {
+  border-left: 5px solid #3498db;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notificationCard:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  background: white;
+}
+
+.rankBadge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-right: 80px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.typeContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5em;
+}
+
+.type {
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.priority {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 0.95em;
+}
+
+.message {
+  margin-bottom: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.timestamp {
+  margin-bottom: 12px;
+  color: #7f8c8d;
+  font-size: 0.95em;
+}
+
+.id {
+  color: #95a5a6;
+  font-size: 0.85em;
+  word-break: break-all;
+}
+
+.footer {
+  background: #f8f9fa;
+  border-top: 2px solid #e9ecef;
+  padding: 25px 30px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.95em;
+}
+
+@media (max-width: 768px) {
+  .container {
+    border-radius: 0;
+  }
+
+  .header {
+    padding: 30px 20px;
+  }
+
+  .controls {
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controlGroup {
+    flex: 1;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .refreshBtn {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .notificationsList {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .notificationCard {
+    padding: 15px;
+  }
+
+  .rankBadge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8em;
+  }
+
+  .cardHeader {
+    margin-right: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .message,
+  .timestamp,
+  .id {
+    padding: 10px;
+  }
+
+  .footer {
+    padding: 20px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 15px;
+  }
+
+  .controls {
+    padding: 15px;
+  }
+
+  .notificationCard {
+    border-left-width: 3px;
+  }
+
+  .rankBadge {
+    font-size: 0.75em;
+    padding: 4px 10px;
+  }
+
+  .cardHeader {
+    margin-right: 50px;
+  }
+}
